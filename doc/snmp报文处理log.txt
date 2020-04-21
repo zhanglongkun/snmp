@@ -1,0 +1,427 @@
+9:c64:check_wrap: check wrap 0x0.0x1fcc94b 0x0.0x1fcc94b
+trace: netsnmp_c64_check_for_32bit_wrap(): int64.c, 279:
+9:c64:check_wrap: no wrap
+trace: netsnmp_c64_check_for_32bit_wrap(): int64.c, 272:
+9:c64:check_wrap: check wrap 0x0.0xdbc8 0x0.0xdbc8
+trace: netsnmp_c64_check_for_32bit_wrap(): int64.c, 279:
+9:c64:check_wrap: no wrap
+trace: netsnmp_c64_check_for_32bit_wrap(): int64.c, 272:
+9:c64:check_wrap: check wrap 0x0.0x0 0x0.0x0
+trace: netsnmp_c64_check_for_32bit_wrap(): int64.c, 279:
+9:c64:check_wrap: no wrap
+trace: netsnmp_c64_check_for_32bit_wrap(): int64.c, 272:
+9:c64:check_wrap: check wrap 0x0.0x0 0x0.0x0
+trace: netsnmp_c64_check_for_32bit_wrap(): int64.c, 279:
+9:c64:check_wrap: no wrap
+trace: netsnmp_access_interface_entry_calculate_stats(): if-mib/data_access/interface.c, 662:
+access:interface: calculate_stats
+compare:index: compare .7 to .7
+compare:index: result was 0
+trace: netsnmp_access_interface_entry_free(): if-mib/data_access/interface.c, 325:
+access:interface:entry: free
+trace: netsnmp_access_interface_container_free(): if-mib/data_access/interface.c, 182:
+access:interface:container: free
+verbose:ifTable:ifTable_cache_load: 7 records
+helper:cache_handler:  loaded (3)
+trace: run_alarms(): snmp_alarm.c, 219:
+snmp_alarm: alarm 1 completed
+trace: snmp_sess_select_info2_flags(): snmp_api.c, 6050:
+sess_select: for all sessions: 7 3 
+sess_select: next alarm at 1587407285.209488 sec
+verbose:sess_select: timer due in 2.983705 sec
+verbose:sess_select: setting timer to 2.983705 sec, clear block (was 0)
+trace: receive(): snmpd.c, 1291:
+snmpd/select: select( numfds=8, ..., tvp=0xbeebda10)
+trace: receive(): snmpd.c, 1294:
+timer: tvp 2.983705
+trace: receive(): snmpd.c, 1297:
+snmpd/select: returned, count = 1
+trace: netsnmp_udpbase_recvfrom(): transports/snmpUDPBaseDomain.c, 187:
+udpbase:recv: got source addr: 192.168.100.95
+trace: netsnmp_udpbase_recvfrom(): transports/snmpUDPBaseDomain.c, 205:
+udpbase:recv: got destination (local) addr 192.168.100.2, iface 7
+trace: netsnmp_udpbase_recv(): transports/snmpUDPBaseDomain.c, 424:
+netsnmp_udp: recvfrom fd 7 got 58 bytes (from UDP: [192.168.100.95]:55116->[192.168.100.2]:161)
+transport:recv: 58 bytes from UDP: [192.168.100.95]:55116->[192.168.100.2]:161
+trace: _sess_process_packet(): snmp_api.c, 5201:
+sess_process_packet: session 0x30ad08 fd 7 pkt 0xb541cc28 length 58
+
+Received 58 byte packet from UDP: [192.168.100.95]:55116->[192.168.100.2]:161
+0000: 30 38 02 01  00 04 07 70  72 69 76 61  74 65 A3 2A    08.....private.*
+0016: 02 04 6E 30  02 70 02 01  00 02 01 00  30 1C 30 1A    ..n0.p......0.0.
+0032: 06 12 2B 06  01 04 01 81  88 01 02 03  04 01 01 04    ..+.............
+0048: 88 80 B2 08  40 04 C0 A8  0A 0A                       ....@.....
+
+trace: snmp_parse_version(): snmp_api.c, 3494:
+dumph_recv: SNMP Version
+dumpx_recv:  02 01 00 
+dumpv_recv:    Integer:	0 (0x00)
+trace: _snmp_parse(): snmp_api.c, 4089:
+snmp_api: Parsing SNMPv1 message...
+trace: _snmp_parse(): snmp_api.c, 4096:
+dumph_recv: SNMPv1 message
+
+trace: snmp_comstr_parse(): snmp_auth.c, 130:
+dumph_recv:   SNMP version
+dumpx_recv:    02 01 00 
+dumpv_recv:      Integer:	0 (0x00)
+trace: snmp_comstr_parse(): snmp_auth.c, 142:
+dumph_recv:   community string
+dumpx_recv:    04 07 70 72 69 76 61 74 65 
+dumpv_recv:      String:	private
+trace: _snmp_parse(): snmp_api.c, 4145:
+dumph_recv:   PDU
+trace: snmp_pdu_parse(): snmp_api.c, 4366:
+dumpv_recv:     Command SET
+trace: snmp_pdu_parse(): snmp_api.c, 4451:
+dumph_recv:     request_id
+dumpx_recv:      02 04 6E 30 02 70 
+dumpv_recv:        Integer:	1848640112 (0x6E300270)
+trace: snmp_pdu_parse(): snmp_api.c, 4462:
+dumph_recv:     error status
+dumpx_recv:      02 01 00 
+dumpv_recv:        Integer:	0 (0x00)
+trace: snmp_pdu_parse(): snmp_api.c, 4473:
+dumph_recv:     error index
+dumpx_recv:      02 01 00 
+dumpv_recv:        Integer:	0 (0x00)
+trace: snmp_pdu_parse(): snmp_api.c, 4491:
+dumph_recv:     VarBindList
+trace: snmp_pdu_parse(): snmp_api.c, 4521:
+dumph_recv:       VarBind
+trace: snmp_parse_var_op(): snmp.c, 164:
+dumph_recv:         Name
+dumpx_recv:          06 12 2B 06 01 04 01 81 88 01 02 03 04 01 01 04 
+88 80 B2 08 
+dumpv_recv:            ObjID: iso.3.6.1.4.1.17409.2.3.4.1.1.4.16783624
+trace: snmp_pdu_parse(): snmp_api.c, 4530:
+dumph_recv:         Value
+dumpx_recv:          40 04 C0 A8 0A 0A 
+dumpv_recv:            String:	..
+
+
+trace: _sess_process_packet(): snmp_api.c, 5248:
+sess_process_packet: received message id#0 reqid#1848640112 len 58
+trace: init_agent_snmp_session(): snmp_agent.c, 1398:
+snmp_agent: agent_sesion 0xb541cb28 created
+trace: init_agent_snmp_session(): snmp_agent.c, 1413:
+verbose:asp: asp 0xb541cb28 reqinfo 0xb541c420 created
+trace: _callback_lock(): callback.c, 136:
+9:callback:lock: locked (APP,null)
+trace: snmp_call_callbacks(): callback.c, 344:
+callback: START calling callbacks for maj=1 min=5
+trace: snmp_call_callbacks(): callback.c, 358:
+callback: calling a callback for maj=1 min=5
+trace: vacm_check_view_contents(): mibgroup/mibII/vacm_conf.c, 1361:
+mibII/vacm_vars: vacm_in_view: ver=0, community=private
+trace: netsnmp_udp_getSecName(): transports/snmpUDPDomain.c, 425:
+netsnmp_udp_getSecName: opaque = 0xb541ca88 (len = 36), sizeof = 36, family = 2 (2)
+trace: netsnmp_udp_getSecName(): transports/snmpUDPDomain.c, 442:
+netsnmp_udp_getSecName: resolve <"private", 0x5f64a8c0>
+trace: netsnmp_udp_getSecName(): transports/snmpUDPDomain.c, 452:
+netsnmp_udp_getSecName: compare <"public", 0.0.0.0/0.0.0.0>... nope
+trace: netsnmp_udp_getSecName(): transports/snmpUDPDomain.c, 452:
+netsnmp_udp_getSecName: compare <"private", 0.0.0.0/0.0.0.0>... SUCCESS
+trace: netsnmp_subtree_find_first(): agent_registry.c, 313:
+subtree: looking for subtree for context: ""
+trace: netsnmp_subtree_find_first(): agent_registry.c, 317:
+subtree: found one for: ""
+trace: vacm_check_view_contents(): mibgroup/mibII/vacm_conf.c, 1492:
+mibII/vacm_vars: vacm_in_view: sn=comm2, gn=grpcomm2, Done checking setup
+trace: snmp_call_callbacks(): callback.c, 370:
+callback: END calling callbacks for maj=1 min=5 (1 called)
+trace: _callback_unlock(): callback.c, 170:
+9:callback:lock: unlocked (APP,null)
+trace: netsnmp_subtree_find_prev(): agent_registry.c, 999:
+wtest: oid in: iso.3.6.1.4.1.17409.2.3.4.1.1.4.16783624
+trace: netsnmp_subtree_find_prev(): agent_registry.c, 1010:
+wtest: oid cmp: iso.3.6.1.4.1.17409.2.3.4.2  --- off = 11, in off = 0 test = 1
+trace: _callback_lock(): callback.c, 136:
+9:callback:lock: locked (APP,null)
+trace: snmp_call_callbacks(): callback.c, 344:
+callback: START calling callbacks for maj=1 min=0
+trace: snmp_call_callbacks(): callback.c, 358:
+callback: calling a callback for maj=1 min=0
+trace: vacm_check_view_contents(): mibgroup/mibII/vacm_conf.c, 1361:
+mibII/vacm_vars: vacm_in_view: ver=0, community=private
+trace: netsnmp_udp_getSecName(): transports/snmpUDPDomain.c, 425:
+netsnmp_udp_getSecName: opaque = 0xb541ca88 (len = 36), sizeof = 36, family = 2 (2)
+trace: netsnmp_udp_getSecName(): transports/snmpUDPDomain.c, 442:
+netsnmp_udp_getSecName: resolve <"private", 0x5f64a8c0>
+trace: netsnmp_udp_getSecName(): transports/snmpUDPDomain.c, 452:
+netsnmp_udp_getSecName: compare <"public", 0.0.0.0/0.0.0.0>... nope
+trace: netsnmp_udp_getSecName(): transports/snmpUDPDomain.c, 452:
+netsnmp_udp_getSecName: compare <"private", 0.0.0.0/0.0.0.0>... SUCCESS
+trace: netsnmp_subtree_find_first(): agent_registry.c, 313:
+subtree: looking for subtree for context: ""
+trace: netsnmp_subtree_find_first(): agent_registry.c, 317:
+subtree: found one for: ""
+trace: vacm_check_view_contents(): mibgroup/mibII/vacm_conf.c, 1492:
+mibII/vacm_vars: vacm_in_view: sn=comm2, gn=grpcomm2, vn=_all_trace: netsnmp_view_get(): vacm.c, 487:
+vacm:getView: , found
+, vt=1
+trace: snmp_call_callbacks(): callback.c, 370:
+callback: END calling callbacks for maj=1 min=0 (1 called)
+trace: _callback_unlock(): callback.c, 170:
+9:callback:lock: unlocked (APP,null)
+trace: netsnmp_add_varbind_to_cache(): snmp_agent.c, 2004:
+snmp_agent: add_vb_to_cache(0xb541cb28, 1, iso.3.6.1.4.1.17409.2.3.4.1.1.4.16783624, 0x2b1fc8)
+trace: netsnmp_add_varbind_to_cache(): snmp_agent.c, 2079:
+snmp_agent: tp->start iso.3.6.1.4.1.17409.2.3.4.1, tp->end iso.3.6.1.4.1.17409.2.3.4.2, 
+trace: netsnmp_add_varbind_to_cache(): snmp_agent.c, 2099:
+verbose:asp: asp 0xb541cb28 reqinfo 0xb541c420 assigned to request
+trace: _callback_lock(): callback.c, 136:
+9:callback:lock: locked (APP,null)
+trace: snmp_call_callbacks(): callback.c, 344:
+callback: START calling callbacks for maj=1 min=0
+trace: snmp_call_callbacks(): callback.c, 358:
+callback: calling a callback for maj=1 min=0
+trace: vacm_check_view_contents(): mibgroup/mibII/vacm_conf.c, 1361:
+mibII/vacm_vars: vacm_in_view: ver=0, community=private
+trace: netsnmp_udp_getSecName(): transports/snmpUDPDomain.c, 425:
+netsnmp_udp_getSecName: opaque = 0xb541ca88 (len = 36), sizeof = 36, family = 2 (2)
+trace: netsnmp_udp_getSecName(): transports/snmpUDPDomain.c, 442:
+netsnmp_udp_getSecName: resolve <"private", 0x5f64a8c0>
+trace: netsnmp_udp_getSecName(): transports/snmpUDPDomain.c, 452:
+netsnmp_udp_getSecName: compare <"public", 0.0.0.0/0.0.0.0>... nope
+trace: netsnmp_udp_getSecName(): transports/snmpUDPDomain.c, 452:
+netsnmp_udp_getSecName: compare <"private", 0.0.0.0/0.0.0.0>... SUCCESS
+trace: netsnmp_subtree_find_first(): agent_registry.c, 313:
+subtree: looking for subtree for context: ""
+trace: netsnmp_subtree_find_first(): agent_registry.c, 317:
+subtree: found one for: ""
+trace: vacm_check_view_contents(): mibgroup/mibII/vacm_conf.c, 1492:
+mibII/vacm_vars: vacm_in_view: sn=comm2, gn=grpcomm2, vn=_all_trace: netsnmp_view_get(): vacm.c, 487:
+vacm:getView: , found
+, vt=1
+trace: snmp_call_callbacks(): callback.c, 370:
+callback: END calling callbacks for maj=1 min=0 (1 called)
+trace: _callback_unlock(): callback.c, 170:
+9:callback:lock: unlocked (APP,null)
+trace: handle_set(): snmp_agent.c, 3204:
+agent_set: doing set mode = 0 (SET_RESERVE1)
+trace: netsnmp_call_handlers(): agent_handler.c, 605:
+handler:calling: main handler bulk_to_next
+trace: netsnmp_call_handler(): agent_handler.c, 521:
+handler:calling: calling handler bulk_to_next for mode SET_RESERVE1
+trace: netsnmp_call_handler(): agent_handler.c, 529:
+handler:returned: handler bulk_to_next returned 0
+trace: netsnmp_call_handler(): agent_handler.c, 521:
+handler:calling: calling handler table for mode SET_RESERVE1
+trace: table_helper_handler(): helpers/table.c, 236:
+helper:table:req: Got SET_RESERVE1 (0) mode request for handler table: base oid:iso.3.6.1.4.1.17409.2.3.4.1
+iso.3.6.1.4.1.17409.2.3.4.1.1.4.16783624
+trace: table_helper_handler(): helpers/table.c, 321:
+helper:table:set:  SET_REQUEST for OID: iso.3.6.1.4.1.17409.2.3.4.1.1.4.16783624trace: sprint_realloc_by_type(): mib.c, 1999:
+output: sprint_by_type, type 64
+ type=64(40), value=IpAddress: 192.168.10.10
+trace: table_helper_handler(): helpers/table.c, 447:
+helper:table:col:   have at least a column (4)
+trace: table_helper_handler(): helpers/table.c, 526:
+helper:table:     have 1 bytes of index
+trace: table_helper_handler(): helpers/table.c, 576:
+helper:table:   looking for 1 indexes
+trace: parse_one_oid_index(): mib.c, 3863:
+parse_oid_indexes: Parsed int(66): 16783624
+trace: table_helper_handler(): helpers/table.c, 613:
+helper:table:   got 1 (incomplete=0)
+trace: table_helper_handler(): helpers/table.c, 633:
+helper:table:results:   found 1 indexes
+trace: table_helper_handler(): helpers/table.c, 637:
+helper:table:results:   column: 4, indexes: 1trace: sprint_realloc_by_type(): mib.c, 1999:
+output: sprint_by_type, type 66
+   index: type=66(42), value=Gauge32: 16783624
+trace: netsnmp_call_handler(): agent_handler.c, 521:
+handler:calling: calling handler table_iterator for mode SET_RESERVE1
+trace: build_oid_noalloc(): mib.c, 3774:
+build_oid_noalloc: generated: iso.3.6.1.4.1.17409.2.3.4.1.1.4.16783624
+trace: netsnmp_data_list_add_node(): data_list.c, 92:
+data_list: adding key 'ti_cache'
+trace: netsnmp_data_list_add_node(): data_list.c, 92:
+data_list: adding key 'table_iterator'
+trace: netsnmp_table_iterator_helper_handler(): helpers/table_iterator.c, 939:
+table_iterator: call subhandler for mode: SET_RESERVE1
+trace: netsnmp_call_handler(): agent_handler.c, 521:
+handler:calling: calling handler onuInfoTable for mode SET_RESERVE1
+trace: onuInfoTable_handler(): mysnmp/eponTree_table.c, 10789:
+eponTree_table:handler: Processing request (0)
+trace: onuInfoTable_handler(): mysnmp/eponTree_table.c, 11116:
+colnum: table_info->colnum (4)
+trace: netsnmp_call_handler(): agent_handler.c, 529:
+handler:returned: handler onuInfoTable returned 0
+trace: netsnmp_call_handler(): agent_handler.c, 529:
+handler:returned: handler table_iterator returned 0
+trace: netsnmp_call_handler(): agent_handler.c, 529:
+handler:returned: handler table returned 0
+trace: handle_set(): snmp_agent.c, 3207:
+agent_set: did set mode = 0, status = 0
+trace: handle_set(): snmp_agent.c, 3204:
+agent_set: doing set mode = 1 (SET_RESERVE2)
+trace: netsnmp_call_handlers(): agent_handler.c, 605:
+handler:calling: main handler bulk_to_next
+trace: netsnmp_call_handler(): agent_handler.c, 521:
+handler:calling: calling handler bulk_to_next for mode SET_RESERVE2
+trace: netsnmp_call_handler(): agent_handler.c, 529:
+handler:returned: handler bulk_to_next returned 0
+trace: netsnmp_call_handler(): agent_handler.c, 521:
+handler:calling: calling handler table for mode SET_RESERVE2
+trace: table_helper_handler(): helpers/table.c, 236:
+helper:table:req: Got SET_RESERVE2 (1) mode request for handler table: base oid:iso.3.6.1.4.1.17409.2.3.4.1
+trace: netsnmp_call_handler(): agent_handler.c, 521:
+handler:calling: calling handler table_iterator for mode SET_RESERVE2
+trace: netsnmp_table_iterator_helper_handler(): helpers/table_iterator.c, 939:
+table_iterator: call subhandler for mode: SET_RESERVE1
+trace: netsnmp_call_handler(): agent_handler.c, 521:
+handler:calling: calling handler onuInfoTable for mode SET_RESERVE2
+trace: onuInfoTable_handler(): mysnmp/eponTree_table.c, 10789:
+eponTree_table:handler: Processing request (1)
+trace: netsnmp_call_handler(): agent_handler.c, 529:
+handler:returned: handler onuInfoTable returned 0
+trace: netsnmp_call_handler(): agent_handler.c, 529:
+handler:returned: handler table_iterator returned 0
+trace: netsnmp_call_handler(): agent_handler.c, 529:
+handler:returned: handler table returned 0
+trace: handle_set(): snmp_agent.c, 3207:
+agent_set: did set mode = 1, status = 0
+trace: handle_set(): snmp_agent.c, 3204:
+agent_set: doing set mode = 2 (SET_ACTION)
+trace: netsnmp_call_handlers(): agent_handler.c, 605:
+handler:calling: main handler bulk_to_next
+trace: netsnmp_call_handler(): agent_handler.c, 521:
+handler:calling: calling handler bulk_to_next for mode SET_ACTION
+trace: netsnmp_call_handler(): agent_handler.c, 529:
+handler:returned: handler bulk_to_next returned 0
+trace: netsnmp_call_handler(): agent_handler.c, 521:
+handler:calling: calling handler table for mode SET_ACTION
+trace: table_helper_handler(): helpers/table.c, 236:
+helper:table:req: Got SET_ACTION (2) mode request for handler table: base oid:iso.3.6.1.4.1.17409.2.3.4.1
+trace: netsnmp_call_handler(): agent_handler.c, 521:
+handler:calling: calling handler table_iterator for mode SET_ACTION
+trace: netsnmp_table_iterator_helper_handler(): helpers/table_iterator.c, 939:
+table_iterator: call subhandler for mode: SET_RESERVE1
+trace: netsnmp_call_handler(): agent_handler.c, 521:
+handler:calling: calling handler onuInfoTable for mode SET_ACTION
+trace: onuInfoTable_handler(): mysnmp/eponTree_table.c, 10789:
+eponTree_table:handler: Processing request (2)
+trace: onuInfoTable_handler(): mysnmp/eponTree_table.c, 11208:
+colnum: table_info->colnum (4)
+trace: onuInfoTable_handler(): mysnmp/eponTree_table.c, 11260:
+colnum: table_info->colnum (4)
+trace: netsnmp_call_handler(): agent_handler.c, 529:
+handler:returned: handler onuInfoTable returned 0
+trace: netsnmp_call_handler(): agent_handler.c, 529:
+handler:returned: handler table_iterator returned 0
+trace: netsnmp_call_handler(): agent_handler.c, 529:
+handler:returned: handler table returned 0
+trace: handle_set(): snmp_agent.c, 3207:
+agent_set: did set mode = 2, status = 0
+trace: handle_set(): snmp_agent.c, 3204:
+agent_set: doing set mode = 3 (SET_COMMIT)
+trace: netsnmp_call_handlers(): agent_handler.c, 605:
+handler:calling: main handler bulk_to_next
+trace: netsnmp_call_handler(): agent_handler.c, 521:
+handler:calling: calling handler bulk_to_next for mode SET_COMMIT
+trace: netsnmp_call_handler(): agent_handler.c, 529:
+handler:returned: handler bulk_to_next returned 0
+trace: netsnmp_call_handler(): agent_handler.c, 521:
+handler:calling: calling handler table for mode SET_COMMIT
+trace: table_helper_handler(): helpers/table.c, 236:
+helper:table:req: Got SET_COMMIT (3) mode request for handler table: base oid:iso.3.6.1.4.1.17409.2.3.4.1
+trace: netsnmp_call_handler(): agent_handler.c, 521:
+handler:calling: calling handler table_iterator for mode SET_COMMIT
+trace: netsnmp_table_iterator_helper_handler(): helpers/table_iterator.c, 939:
+table_iterator: call subhandler for mode: SET_RESERVE1
+trace: netsnmp_call_handler(): agent_handler.c, 521:
+handler:calling: calling handler onuInfoTable for mode SET_COMMIT
+trace: onuInfoTable_handler(): mysnmp/eponTree_table.c, 10789:
+eponTree_table:handler: Processing request (3)
+trace: netsnmp_call_handler(): agent_handler.c, 529:
+handler:returned: handler onuInfoTable returned 0
+trace: netsnmp_call_handler(): agent_handler.c, 529:
+handler:returned: handler table_iterator returned 0
+trace: netsnmp_call_handler(): agent_handler.c, 529:
+handler:returned: handler table returned 0
+trace: handle_set(): snmp_agent.c, 3207:
+agent_set: did set mode = 3, status = 0
+trace: netsnmp_handle_request(): snmp_agent.c, 3289:
+results: request results (status = 0):
+trace: netsnmp_handle_request(): snmp_agent.c, 3292:
+results: 	trace: sprint_realloc_by_type(): mib.c, 1999:
+output: sprint_by_type, type 64
+iso.3.6.1.4.1.17409.2.3.4.1.1.4.16783624 = IpAddress: 192.168.10.10
+trace: netsnmp_wrap_up_request(): snmp_agent.c, 1628:
+snmp_agent: SET request complete, asp = 0xb541cb28
+trace: _snmp_build(): snmp_api.c, 2907:
+snmp_send: Building SNMPv1 message...
+trace: _snmp_build(): snmp_api.c, 2910:
+dumph_send: RESPONSE
+trace: snmp_pdu_realloc_rbuild(): snmp_api.c, 3277:
+snmp_pdu_realloc_rbuild: starting
+trace: snmp_pdu_realloc_rbuild(): snmp_api.c, 3292:
+dumph_send:   VarBind
+trace: snmp_realloc_rbuild_var_op(): snmp.c, 339:
+dumph_send:     Value
+dumpx_send:      40 04 C0 A8 0A 0A 
+dumpv_send:        String:	..
+
+
+trace: snmp_realloc_rbuild_var_op(): snmp.c, 440:
+dumph_send:     Name
+dumpx_send:      06 12 2B 06 01 04 01 81 88 01 02 03 04 01 01 04 
+88 80 B2 08 
+dumpv_send:        ObjID: iso.3.6.1.4.1.17409.2.3.4.1.1.4.16783624
+trace: snmp_pdu_realloc_rbuild(): snmp_api.c, 3360:
+dumph_send: error index
+dumpx_send:  02 01 00 
+dumpv_send:    Integer:	0 (0x00)
+trace: snmp_pdu_realloc_rbuild(): snmp_api.c, 3373:
+dumph_send: error status
+dumpx_send:  02 01 00 
+dumpv_send:    Integer:	0 (0x00)
+trace: snmp_pdu_realloc_rbuild(): snmp_api.c, 3386:
+dumph_send: request_id
+dumpx_send:  02 04 6E 30 02 70 
+dumpv_send:    Integer:	1848640112 (0x6E300270)
+trace: _snmp_build(): snmp_api.c, 2916:
+dumph_send: Community String
+dumpx_send:  04 07 70 72 69 76 61 74 65 
+dumpv_send:    String:	private
+trace: _snmp_build(): snmp_api.c, 2932:
+dumph_send: SNMP Version Number
+dumpx_send:  02 01 00 
+dumpv_send:    Integer:	0 (0x00)
+trace: _snmp_build(): snmp_api.c, 2951:
+dumph_send: SNMPv1 Message
+trace: _sess_async_send(): snmp_api.c, 4963:
+sess_process_packet: sending message id#0 reqid#1848640112 len 58
+transport:send: 58 bytes to UDP: [192.168.100.95]:55116->[192.168.100.2]:161
+
+Sending 58 bytes to UDP: [192.168.100.95]:55116->[192.168.100.2]:161
+0000: 30 38 02 01  00 04 07 70  72 69 76 61  74 65 A2 2A    08.....private.*
+0016: 02 04 6E 30  02 70 02 01  00 02 01 00  30 1C 30 1A    ..n0.p......0.0.
+0032: 06 12 2B 06  01 04 01 81  88 01 02 03  04 01 01 04    ..+.............
+0048: 88 80 B2 08  40 04 C0 A8  0A 0A                       ....@.....
+
+trace: netsnmp_udpbase_send(): transports/snmpUDPBaseDomain.c, 463:
+netsnmp_udp: send 58 bytes from 0xb542e3b6 to UDP: [192.168.100.95]:55116->[192.168.100.2]:161 on fd 7
+trace: netsnmp_udpbase_sendto(): transports/snmpUDPBaseDomain.c, 253:
+udpbase:sendto: sending from 192.168.100.2
+trace: netsnmp_remove_and_free_agent_snmp_session(): snmp_agent.c, 1842:
+snmp_agent: REMOVE session == 0xb541cb28
+trace: free_agent_snmp_session(): snmp_agent.c, 1424:
+snmp_agent: agent_session 0xb541cb28 released
+trace: free_agent_snmp_session(): snmp_agent.c, 1429:
+verbose:asp: asp 0xb541cb28 reqinfo 0xb541c420 freed
+trace: handle_snmp_packet(): snmp_agent.c, 1993:
+snmp_agent: end of handle_snmp_packet, asp = 0xb541cb28
+trace: _sess_read(): snmp_api.c, 5541:
+sess_read: not reading 3 (fdset 0xbeebda98 set 0)
+trace: snmp_sess_select_info2_flags(): snmp_api.c, 6050:
+sess_select: for all sessions: 7 3 
+sess_select: next alarm at 1587407285.209488 sec
+verbose:sess_select: timer due in 0.121390 sec
+verbose:sess_select: setting timer to 0.121390 sec, clear block (was 0)
+trace: receive(): snmpd.c, 1291:
+snmpd/select: select( numfds=8, ..., tvp=0xbeebda10)
+trace: receive(): snmpd.c, 1294:
+timer: tvp 0.121390
